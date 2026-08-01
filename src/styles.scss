@@ -45,6 +45,10 @@ body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -78,6 +82,7 @@ button {
 
 .section {
   padding: var(--space-5) 0;
+  scroll-margin-top: 80px;
 }
 
 .section-title {

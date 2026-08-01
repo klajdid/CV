@@ -10,3 +10,13 @@
     <p>© {{ currentYear }} {{ name }}. All rights reserved.</p>
   </div>
 </footer>
+
+<button
+  type="button"
+  class="back-to-top"
+  [class.back-to-top--visible]="showBackToTop()"
+  (click)="scrollToTop()"
+  aria-label="Back to top"
+>
+  ↑
+</button>

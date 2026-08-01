@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { Header } from './components/header/header';
 import { Hero } from './components/hero/hero';
 import { Experience } from './components/experience/experience';
@@ -15,4 +15,14 @@ import { PROFILE } from './data/cv-data';
 export class App {
   protected readonly currentYear = new Date().getFullYear();
   protected readonly name = PROFILE.fullName;
+  protected readonly showBackToTop = signal(false);
+
+  @HostListener('window:scroll')
+  protected onScroll(): void {
+    this.showBackToTop.set(window.scrollY > 400);
+  }
+
+  protected scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
