@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="container header__inner">
+    <a class="header__brand" href="#top">{{ name }}</a>
+
+    <nav class="header__nav">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button
+      class="header__toggle"
+      type="button"
+      (click)="toggleTheme()"
+      [attr.aria-label]="theme.theme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+    >
+      @if (theme.theme() === 'dark') {
+        <span aria-hidden="true">☀️</span>
+      } @else {
+        <span aria-hidden="true">🌙</span>
+      }
+    </button>
+  </div>
+</header>
