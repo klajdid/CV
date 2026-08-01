@@ -1,0 +1,29 @@
+<section id="experience" class="section">
+  <div class="container">
+    <h2 class="section-title">Experience</h2>
+
+    <ol class="timeline">
+      @for (entry of experience; track entry.company + entry.role + entry.startDate) {
+        <li class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__card">
+            <div class="timeline__head">
+              <h3 class="timeline__role">{{ entry.role }}</h3>
+              <span class="timeline__dates">{{ entry.startDate }} – {{ entry.endDate }}</span>
+            </div>
+            <p class="timeline__company">{{ entry.company }} · {{ entry.location }}</p>
+            <p class="timeline__description">{{ entry.description }}</p>
+
+            @if (entry.highlights.length) {
+              <ul class="timeline__highlights">
+                @for (highlight of entry.highlights; track highlight) {
+                  <li>{{ highlight }}</li>
+                }
+              </ul>
+            }
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

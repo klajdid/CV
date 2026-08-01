@@ -1,0 +1,22 @@
+<section id="contact" class="section contact">
+  <div class="container">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="contact__subtitle">Feel free to reach out by email or WhatsApp — I'll get back to you as soon as I can.</p>
+
+    <div class="contact__cards">
+      <a class="contact__card" [href]="mailtoLink()">
+        <span class="contact__icon" aria-hidden="true">✉️</span>
+        <span class="contact__label">Email</span>
+        <span class="contact__value">{{ contact.email }}</span>
+      </a>
+
+      @if (hasWhatsapp()) {
+        <a class="contact__card" [href]="whatsappLink()" target="_blank" rel="noopener noreferrer">
+          <span class="contact__icon" aria-hidden="true">💬</span>
+          <span class="contact__label">WhatsApp</span>
+          <span class="contact__value">Send a message</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
